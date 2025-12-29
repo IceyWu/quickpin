@@ -1,0 +1,44 @@
+{
+  "name": "quickpin",
+  "description": "QuickPin - A sleek floating bookmark manager for your browser",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "zip:all": "wxt zip && wxt zip -b firefox",
+    "postinstall": "wxt prepare",
+    "release": "bumpp",
+    "publish": "pnpm zip:all && wxt submit",
+    "publish:dry": "pnpm zip:all && wxt submit --dry-run",
+    "lint": "ultracite check",
+    "lint:fix": "ultracite fix",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,vue,js}": "ultracite fix"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.10",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@wxt-dev/module-vue": "^1.0.3",
+    "autoprefixer": "^10.4.23",
+    "bumpp": "^10.3.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "ultracite": "6.5.0",
+    "vue": "^3.5.26",
+    "wxt": "^0.20.13"
+  },
+  "dependencies": {
+    "@wxt-dev/storage": "^1.2.6"
+  }
+}

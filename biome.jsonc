@@ -1,0 +1,32 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["ultracite/core"],
+  "files": {
+    "includes": ["**/*.ts", "**/*.vue", "**/*.js"],
+    "ignoreUnknown": true
+  },
+  "javascript": {
+    "globals": ["browser", "defineContentScript", "createShadowRootUi"]
+  },
+  "linter": {
+    "rules": {
+      "style": {
+        "useFilenamingConvention": "off",
+        "useBlockStatements": "off"
+      },
+      "correctness": {
+        "noUnusedVariables": "off",
+        "noUnusedImports": "off"
+      },
+      "suspicious": {
+        "noAlert": "off",
+        "useAwait": "off",
+        "noAssignInExpressions": "off",
+        "useIterableCallbackReturn": "off"
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": "off"
+      }
+    }
+  }
+}
